@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tdf.CSharp
+namespace Tdf.CSharp.CSharpDay
 {
     /*
      * 事件的应用 （Observer设计模式--热水器）

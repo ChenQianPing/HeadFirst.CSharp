@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tdf.CSharp
+namespace Tdf.CSharp.CSharpDay
 {
     /*
      * 委托：把方法当做参数进行传递。

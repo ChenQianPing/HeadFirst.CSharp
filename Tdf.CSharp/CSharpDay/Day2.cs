@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tdf.CSharp
+namespace Tdf.CSharp.CSharpDay
 {
     public delegate void GreetingDelegate(string name); // 声明委托
 
