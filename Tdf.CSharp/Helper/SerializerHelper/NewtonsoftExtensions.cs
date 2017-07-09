@@ -17,15 +17,15 @@ namespace Tdf.CSharp.Helper.SerializerHelper
         /// <returns></returns>
         public static string SerializeObjToJson(object obj)
         {
-            var strRes = string.Empty;
+            var json = string.Empty;
             try
             {
-                strRes = JsonConvert.SerializeObject(obj);
+                json = JsonConvert.SerializeObject(obj);
             }
             catch
             { }
 
-            return strRes;
+            return json;
         }
 
         /// <summary>

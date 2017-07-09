@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -46,20 +47,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlgorithmDay\A01.cs" />
+    <Compile Include="AlgorithmDay\Recursion.cs" />
+    <Compile Include="Cognitive\EventBus\EventData.cs" />
+    <Compile Include="Cognitive\EventBus\Chapter1\FishingMan.cs" />
+    <Compile Include="Cognitive\EventBus\Chapter1\FishingRod.cs" />
+    <Compile Include="Cognitive\EventBus\Chapter1\FishingScene.cs" />
+    <Compile Include="Cognitive\EventBus\Chapter1\FishType.cs" />
+    <Compile Include="Cognitive\EventBus\Chapter2\OrderAddedEvent.cs" />
+    <Compile Include="Cognitive\EventBus\Chapter2\OrderAddedEventHandler.cs" />
+    <Compile Include="Cognitive\EventBus\Chapter2\OrderEntity.cs" />
+    <Compile Include="Cognitive\EventBus\Chapter2\OrderScene.cs" />
+    <Compile Include="Cognitive\EventBus\EventBus.cs" />
+    <Compile Include="Cognitive\EventBus\IEventData.cs" />
+    <Compile Include="Cognitive\EventBus\IEventHandler.cs" />
+    <Compile Include="Cognitive\IoC\Cat.cs" />
+    <Compile Include="Cognitive\IoC\Dog.cs" />
+    <Compile Include="Cognitive\IoC\IAnimal.cs" />
+    <Compile Include="Cognitive\IoC\IPeople.cs" />
+    <Compile Include="Cognitive\IoC\IServiceContainer.cs" />
+    <Compile Include="Cognitive\IoC\IServiceProvider.cs" />
+    <Compile Include="Cognitive\IoC\IServiceRegister.cs" />
+    <Compile Include="Cognitive\IoC\Man.cs" />
+    <Compile Include="Cognitive\IoC\ServiceProvider.cs" />
+    <Compile Include="Cognitive\IoC\TestIoc.cs" />
+    <Compile Include="Cognitive\IoC\Woman.cs" />
     <Compile Include="CSharpDay\Day1.cs" />
     <Compile Include="CSharpDay\Day2.cs" />
     <Compile Include="CSharpDay\Day3.cs" />
     <Compile Include="CSharpDay\Day4.cs" />
+    <Compile Include="CSharpDay\Day5.cs" />
+    <Compile Include="CSharpDay\Day6.cs" />
+    <Compile Include="Helper\KetamaHashHelp\HashAlgorithm.cs" />
+    <Compile Include="Helper\KetamaHashHelp\HashAlgorithmPercentTest.cs" />
+    <Compile Include="Helper\KetamaHashHelp\HashAlgorithmTest.cs" />
+    <Compile Include="Helper\KetamaHashHelp\KetamaNodeLocator.cs" />
     <Compile Include="Helper\SerializerHelper\DataContractExtensions.cs" />
     <Compile Include="Helper\SerializerHelper\JavascriptExtentions.cs" />
     <Compile Include="Helper\SerializerHelper\NewtonsoftExtensions.cs" />
     <Compile Include="Helper\SerializerHelper\TestSerializerHelper.cs" />
     <Compile Include="Helper\UtilsHelper\ExtensionHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\FibonacciSequenceHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\GuidHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\MacHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\RandomHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\RmbHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\ValidationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
