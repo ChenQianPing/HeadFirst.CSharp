@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    /*
+    Javascript中的方法，类中的方法
+    http://www.cnblogs.com/lori/archive/2013/01/23/2873999.html
+    */
+
+
+    // 最简单的函数（方法）：
+
+    //加运算
+    function Sum(x, y) {
+        return parseInt(x) + parseInt(y);
+    }
+
+    //减运算
+    function Sub(x, y) {
+        return parseInt(x) - parseInt(y);
+    }
+
+    var result = Sum(7, 15);
+    document.writeln(result);  // 22
+
+    result = Sub(7, 15);
+    document.writeln(result);  // -8
+
+    // 方法中的子方法
+    // 别外，方法中还可以有子方法，在子方法中可以对父方法里的属性进行重写操作，以改变它的值，代码如下：
+    function Big() {
+        var name = "方法big";
+        function small() {
+            name = "方法small";
+        }
+        small();
+        return name;
+    }
+    alert(Big());
+
+    // 方法的返回值可以是空，也可以是布尔型，整形，字符串，而且还可以是一个对象，代码如下：
+    function ReturnObject() {
+        var name = "Bobby";
+        return {//返回一个对象，对象里的属性对外公开
+            Name: name,
+            Age: 30
+        };
+    }
+    alert(ReturnObject().Name);
+
+    // 方法可以当做参数进行传递（JS中的委托，回调函数）
+    // 一个方法可以作为其一个方法的接收参数，这一般称为回调函数，在C#语言里叫做委托。
+
+    //函数作为参数进行传递
+    function AlertBox(msg, callback) {
+        if (msg != null) {
+            callback(msg);
+        }
+        else {
+            alert("null message");
+        }
+    }
+    //js的回调函数
+    AlertBox("方法可以当做参数进行传递", function (msg) {
+        alert(msg);
+    });
+
+
+</script>

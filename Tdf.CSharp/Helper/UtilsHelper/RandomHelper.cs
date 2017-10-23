@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tdf.CSharp.Helper.UtilsHelper
 {
-    public static class RandomHelper
+    public static class RandomHelper 
     {
         #region 随机布尔值
         /// <summary>

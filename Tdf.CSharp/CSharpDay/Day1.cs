@@ -52,7 +52,7 @@ namespace Tdf.CSharp.CSharpDay
             HelloWorld sedelegate = delegate (string name) { Console.WriteLine(name + ",你好！"); };
             sedelegate("匿名方法");
 
-            // 使用拉姆达表达式，Lambda表达式:匿名方法的进一步进化。
+            // 使用拉姆达（Lambda）表达式:匿名方法的进一步进化。
             HelloWorld thdelegate = (p => { Console.WriteLine(p + ",你好"); });
             thdelegate("拉姆达表达式");
 

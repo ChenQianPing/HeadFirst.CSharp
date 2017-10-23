@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script>
+    
+    //验证表单
+    function chkFormFun(name, password, email) {
+        if (name === '') {
+            alert('用户名不能为空');
+            return false;
+        }
+        if (password === '') {
+            alert('密码不能为空');
+            return false;
+        }
+        if (email === '') {
+            alert('Email不能为空');
+            return false;
+        }
+        return true;
+    }
+
+    // 下面定义了一个和人类有关的代码，它体现了JS中的类，类中的属性，及类的行为是如何实现的
+    var Person={ //人对象
+        Name:'Bobby',//属性
+        Facial:['Eye','Nose','Mouth'],//属性
+        Work:function(){//方法
+            console.log(this.Name+'，这个人开始上班了');
+        }
+    }
+
+    // 再调用这个人类对象时，可以这样：
+    console.log("人的姓名：" + Person.Name);
+
+    console.log("人的五官：" + Person.Facial);
+
+    Person.Work();//人要上班了
+
+
+</script>

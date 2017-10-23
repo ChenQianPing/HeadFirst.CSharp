@@ -76,3 +76,22 @@ namespace Tdf.CSharp.CSharpDay
 
     }
 }
+
+
+/*
+ * Value Types，值类型：
+ * 在C#中，值类型继承自System.ValueType的，它们分别是
+ * Bool,byte,char,decimal, double, enu, float, int, long, sbyte, short, struct, uint, ulong, ushort
+ * 
+ * Reference Types 引用类型
+ * 引用类型包括所有的从System.Object继承下来的类型，它们分别是
+ * class, interface, delegate, object,string，其中string是一种特殊的引用类型。
+ * 
+ * 默认值表（C# 参考）
+ * https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/default-values-table
+ * 
+ * 下表显示了整型的大小和范围，这些类型构成了简单类型的一个子集。
+ * http://www.cnblogs.com/lori/archive/2012/11/29/2794308.html
+
+ */
+

@@ -38,6 +38,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmDay\A01.cs" />
+    <Compile Include="AlgorithmDay\A02.cs" />
+    <Compile Include="AlgorithmDay\Josephus.cs" />
+    <Compile Include="AlgorithmDay\PokerAlgorithm.cs" />
     <Compile Include="AlgorithmDay\Recursion.cs" />
     <Compile Include="Cognitive\EventBus\EventData.cs" />
     <Compile Include="Cognitive\EventBus\Chapter1\FishingMan.cs" />
@@ -78,6 +82,24 @@
     <Compile Include="CSharpDay\Day4.cs" />
     <Compile Include="CSharpDay\Day5.cs" />
     <Compile Include="CSharpDay\Day6.cs" />
+    <Compile Include="CSharpDay\Day7.cs" />
+    <Compile Include="CSharpDay\Day8.cs" />
+    <Compile Include="CSharpDay\Delegate01.cs" />
+    <Compile Include="CSharpDay\JoinStr.cs" />
+    <Compile Include="CSharpDay\MonitorDirectory.cs" />
+    <Compile Include="DesignPattern\AdapterPattern\AdapterPattern01.cs" />
+    <Compile Include="DesignPattern\FacadePattern\FacadePattern01.cs" />
+    <Compile Include="DesignPattern\ObserverPattern\ObserverPattern01.cs" />
+    <Compile Include="DesignPattern\SingletonPattern\SingletonPattern01.cs" />
+    <Compile Include="DesignPattern\StrategyPattern\StrategyPattern01.cs" />
+    <Compile Include="Helper\DbHelper\Oracle\OracleHelper.cs" />
+    <Compile Include="Helper\EncryptionHelper\DESEncrypt.cs" />
+    <Compile Include="Helper\EncryptionHelper\HashCode.cs" />
+    <Compile Include="Helper\EncryptionHelper\RSACryption.cs" />
+    <Compile Include="Helper\JsonHelper\AjaxResult.cs" />
+    <Compile Include="Helper\JsonHelper\JsonConverter.cs" />
+    <Compile Include="Helper\JsonHelper\JsonHelper.cs" />
+    <Compile Include="Helper\JsonHelper\JsonSplit.cs" />
     <Compile Include="Helper\KetamaHashHelp\HashAlgorithm.cs" />
     <Compile Include="Helper\KetamaHashHelp\HashAlgorithmPercentTest.cs" />
     <Compile Include="Helper\KetamaHashHelp\HashAlgorithmTest.cs" />
@@ -86,19 +108,31 @@
     <Compile Include="Helper\SerializerHelper\JavascriptExtentions.cs" />
     <Compile Include="Helper\SerializerHelper\NewtonsoftExtensions.cs" />
     <Compile Include="Helper\SerializerHelper\TestSerializerHelper.cs" />
+    <Compile Include="Helper\EncryptionHelper\AesCrypt.cs" />
+    <Compile Include="Helper\UtilsHelper\DateHelper.cs" />
     <Compile Include="Helper\UtilsHelper\ExtensionHelper.cs" />
     <Compile Include="Helper\UtilsHelper\FibonacciSequenceHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\FileHelper.cs" />
     <Compile Include="Helper\UtilsHelper\GuidHelper.cs" />
     <Compile Include="Helper\UtilsHelper\MacHelper.cs" />
     <Compile Include="Helper\UtilsHelper\RandomHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\RandomIdHelper.cs" />
     <Compile Include="Helper\UtilsHelper\RmbHelper.cs" />
     <Compile Include="Helper\UtilsHelper\ValidationHelper.cs" />
+    <Compile Include="Helper\UtilsHelper\XmlHelper.cs" />
+    <Compile Include="LinkedListLibrary\BinarySearchTree.cs" />
+    <Compile Include="LinkedListLibrary\ListTest.cs" />
+    <Compile Include="LinkedListLibrary\QueueTest.cs" />
+    <Compile Include="LinkedListLibrary\StackTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Helper\DbHelper\MySql\" />
+    <Folder Include="Helper\DbHelper\SqlServer\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

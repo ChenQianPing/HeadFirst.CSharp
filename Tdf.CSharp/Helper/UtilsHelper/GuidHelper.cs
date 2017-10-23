@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,7 @@ namespace Tdf.CSharp.Helper.UtilsHelper
      */
     public static class GuidHelper
     {
+        #region 根据GUID获取16位的唯一字符串
         /// <summary>
         /// 根据GUID获取16位的唯一字符串  
         /// </summary>
@@ -23,7 +25,9 @@ namespace Tdf.CSharp.Helper.UtilsHelper
                 i *= ((int) b + 1);
             return $"{i - DateTime.Now.Ticks:x}";
         }
+        #endregion
 
+        #region 根据GUID获取19位的唯一数字序列
         /// <summary>
         /// 根据GUID获取19位的唯一数字序列  
         /// </summary>
@@ -33,7 +37,9 @@ namespace Tdf.CSharp.Helper.UtilsHelper
             var bytes = Guid.NewGuid().ToByteArray();
             return BitConverter.ToInt64(bytes, 0);
         }
+        #endregion
 
+        #region NHibernate的Comb算法
         /*
          * 为了解决UUID无序的问题，
          * NHibernate在其主键生成方式中提供了Comb算法（combined guid/timestamp）。
@@ -83,6 +89,69 @@ namespace Tdf.CSharp.Helper.UtilsHelper
                 guidArray.Length - 4, 4);
 
             return new Guid(guidArray);
+        }
+        #endregion
+
+        #region 创建唯一的订单号, 考虑时间因素
+        /// <summary>
+        /// 创建唯一的订单号, 考虑时间因素
+        /// </summary>
+        /// <returns></returns>
+        private static string GetUniqueKey()
+        {
+            var maxSize = 8;
+            var a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            var chars = a.ToCharArray();
+            var data = new byte[1];
+
+            // 使用RNGCryptoServiceProvider类创建唯一的最多8位数字符串；
+            var crypto = new RNGCryptoServiceProvider();
+            crypto.GetNonZeroBytes(data);
+            var size = maxSize;
+            data = new byte[size];
+            crypto.GetNonZeroBytes(data);
+            var result = new StringBuilder(size);
+            foreach (var b in data)
+            {
+                result.Append(chars[b % (chars.Length - 1)]);
+            }
+            return result.ToString();
+        }
+        #endregion
+
+        #region Oracle格式的SYS_GUID()
+        public static string GenerateNewId()
+        {
+            /*
+             * 234E45F0077881AAE0430AA3034681AA；
+             */
+            return Guid.NewGuid().ToString("N").ToUpper();
+        }
+        #endregion
+
+        public static void TestGuidHelper()
+        {
+
+            /*
+             * 22位：14位时间串+8位随机串；
+             * 20170712235513 p7HB7Eb9  
+             * 20170712235513iigw1hFL
+             * 20170712235513ZTLcc6RN
+            20170712235513JfZyZnne
+            20170712235513gzB7jumu
+            20170712235513aqi4bgTs
+            20170712235513zGkPvtfF
+            20170712235513tjmGXki4
+            20170712235513QdIu1ZII
+            20170712235513cln5pUrC
+            */
+
+            for (var i = 0; i < 10; i++)
+            {
+                var str = $"{DateTime.Now:yyyyMMddHHmmss}{GetUniqueKey()}";
+                Console.WriteLine(str);
+            }
+            Console.ReadKey();
         }
 
     }

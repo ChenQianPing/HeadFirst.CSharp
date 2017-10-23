@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    /*
+    JS的闭包问题
+    */
+
+    // ＪＳ变量的作用域
+    var b = 1; //声明了一个全局变量，在整个<script>块中有效
+
+    //变量的作用域
+    function bobo() {
+        var a = 2; //只在bobo函数体中有效
+
+        document.writeln(a);
+
+        
+        
+        function boboSub() {  //声明一个函数，它只在bobo函数中有效
+            var c = 1; //只有boboSub函数声中有效
+            c = c + a; //子函数中可以使用上级函数的变量
+
+            document.writeln(c);
+        }
+
+        boboSub();
+
+        
+    }
+
+
+    try {
+        document.writeln(b);
+
+        bobo();
+
+
+    }
+    catch (err) {
+        document.writeln("捕捉到例外，开始执行catch块语句 --->");
+        document.writeln("错误名称: " + err.name + " ---> ");
+        document.writeln("错误信息: " + err.message + " ---> ");
+    } finally {
+        document.writeln("开始执行finally块语句");
+    }
+
+
+
+    function a() {
+        var i = 0;
+        function b() {
+            var j = ++i;
+            //document.writeln(++i);
+            //alert(++i);
+            return j;
+        }
+        return b;
+    }
+
+    // 通过一个代码来理解一下闭包吧：
+    // 它的结果不是０，而是１，这就是闭合的作用
+    // 事实上闭合将局部变量Ｂ提升了，默认情况下，
+    // 我们先把直接访问到函数Ａ的内部函数Ｂ，所以闭包还有一个提升变量级别的作用。
+
+    /*
+    var c = a();
+    c(); // 这里输出是多少？2
+    */
+    var c = a()();
+    document.writeln(c);
+
+
+
+</script>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script>
+    
+    /**
+      Javascript中的变量及变量的类型
+      http://www.cnblogs.com/lori/archive/2013/01/22/2870811.html
+    */
+
+    // javascript中变量的数据类型
+    // 注意：javascript语言中，对大小写是敏感的
+    var variableInt = 1;      // 整形变量
+    var variableString = "1"; // 字符型变量
+    var variableBool = true;  // 布尔型变量
+    var variableFloat = 1.01; // 浮点型变量（有的语言里叫它单精度型）
+    var variableArray = [1, 2, 3, "one", "two", "three"];  // 数组型变量
+    var variableJson = [{ ID: "1", Name: "zzl" }, { ID: "2", Name: "ninali" }]; // Json对象型变量
+    var variableObject = { ID: 1, Name: "zzl", Age: 30, IsMarry: true };        // JS对象型变量
+
+    console.log(variableInt);
+    console.log(variableString);
+    console.log(variableBool);
+    console.log(variableFloat);
+    console.log(variableArray);
+    console.log(variableJson);
+    console.log(variableObject);
+
+    // 类型之间的转换
+    var stringToInt = parseInt(variableString);
+    var strintToFloat = parseFloat(variableString);
+
+    console.log(stringToInt);
+    console.log(strintToFloat);
+
+    // 各种类型的变量之间的运算
+    console.log(variableInt + variableInt);    // 整型計算 2
+    console.log(variableInt + variableString); // 整形与字符型计算 11
+    console.log(variableInt + variableFloat);  // 整形与单精度型计算 2.01
+    console.log(variableBool);  // true
+    console.log(!variableBool); // 对布尔型的逻辑非运算 false
+    console.log(variableBool && false); // 对布尔型的逻辑与运算 false
+    console.log(variableBool || false); // 对布尔型的逻辑或运算 true
+
+    for (var i = 0, max = variableArray.length; i < max; i++) { // 对数组的遍历
+        console.log(variableArray[i]);
+    }
+
+    for (var i = 0, max = variableJson.length; i < max; i++) {  // 对JSON对象的遍历
+        console.log("ID索引为：" + variableJson[i]["ID"] + "对应的Name为：" + variableJson[i]["Name"]);
+    }
+
+    console.log("js对象中，ID属性是" + variableObject.ID + "Name属性是" + variableObject.Name); // 输出js对象的值
+
+</script>

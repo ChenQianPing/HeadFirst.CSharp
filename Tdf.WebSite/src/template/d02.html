@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    
+    /* Javascript中的语句如何被执行，如何改变执行顺序
+    代码执行过程中的中断与应对
+    对于ＪＳ代码，正常情况下它自上而下去解释执行，
+    当发表代码出现错误（异常时）它的中断解释，即出现行下面的代码将不会被执行！而如果我们
+    希望以下的代码继续执行，只有为“可能出错的代码”加try...cache块
+    */
+
+
+
+    // 普通的结构
+    var info = "hello world";
+    console.log(info);
+
+    // IF条件结构
+    var number = 2;
+    if (number % 2 === 0)
+        console.log("偶数");
+    else
+        console.log("奇数");   
+
+    // switch条件结构
+    var type = 1;
+    switch (type) {
+        case 1:
+            console.log("支付宝");
+            break;
+        case 2:
+            console.log("财富通");
+            break;
+        case 3:
+            console.log("银联");
+            break;
+        default:
+            console.log("输入类型错误");
+            break;
+    }
+
+
+    // for循环结构
+    for (var i = 0; i < 10; i++) {
+        console.log(i);
+    }
+
+    // while循环实现相同的效果
+    var i = 0;
+    while (i < 10) {
+        console.log(i);
+        i++;
+    }
+
+    // do...while循环，注意一点，do循环它至少会执行一次
+    var i = 0;
+    do {
+        console.log(i);
+        i++;
+    } while (i < 10)
+
+
+    var a = 0;
+    var b = 10 / a;  //这行代码出现异常，ＪＳ代码中断
+    console.log(b);  //事实上，这行代码不会被执行的  Infinity
+
+
+    // 解决方法：
+    var a = 0;
+    var b = 0;
+    try {
+        document.writeln("开始执行try块语句 ---> ");
+        document.writeln("还没有发生例外 ---> ");
+        b = 10 / a;  //这行代码出现异常，ＪＳ代码中断 Infinity
+    }
+    catch (err) {
+        document.writeln("捕捉到例外，开始执行catch块语句 --->");
+        document.writeln("错误名称: " + err.name + " ---> ");
+        document.writeln("错误信息: " + err.message + " ---> ");
+    } finally {
+        document.writeln("开始执行finally块语句");
+    }
+    console.log(b);
+
+    
+
+
+</script>

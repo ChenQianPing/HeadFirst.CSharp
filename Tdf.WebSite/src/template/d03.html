@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    
+    /* Javascript中的类对象
+    http://www.cnblogs.com/lori/archive/2013/01/23/2872547.html
+    ＪＳ实现类的继承的机制是这样的：
+    在子类构造函数（constructor）中调用父类构造函数(父类.call()).
+    修改子类prototype(原型链)属性为父类的实例.(prototype一般用来实现对函数的扩展，Dog.prototype = new AnimalFun();表示对父类AnimalFun进行扩展)
+    重置子类的prototype的constructor属性为子类.
+
+    1.JS中没有类，只有对象，function也是对象
+    2.JS中没有类，当然也没有实际意义的继承，但是JS中有原型链(prototype)，我们说的JS继承大多是通过原型链来实现的
+    3.Object是对象，String是对象，包括上面说的function也是对象，所以对象不仅仅是通过Object来实现，JS中对象是一直存在的
+
+再帮你补充一点：
+· 当我们通过()直接使用函数的时候，会返回自身的值或undefined
+· 当我们要派生一个新的对象的时候需要new出来
+
+    */
+
+    //简单结构体对象
+    var Animal = {
+        Name: "动物",
+        Type: "",
+        Food: ["草", "肉"],
+        Print: function () {
+            console.log("名称：" + this.Name + ",类型：" + this.Type + ",食物：" + this.Food);
+        }
+    };
+    Animal.Print();//调用
+
+    //复杂的类型对象
+    var AnimalFun = function (name, type) {
+        this.Name = name;
+        this.Type = type;
+        this.Food = ["草", "肉"];
+        this.Print = function () {
+            console.log("名称：" + this.Name + ",类型：" + this.Type + ",食物：" + this.Food);
+        }
+    };
+    var animalFun = new AnimalFun();
+    animalFun.Print();
+
+    //子类可以继承父类，并可以复写它的属性
+    var Dog = function (name, type, food) {
+        //调用父类构造方法,并传递name参数  
+        AnimalFun.call(this, name, type);
+        //复写属性  
+        this.Food = food;
+    }
+
+    //将Dog的原型链指向AnimalFun对象  
+    Dog.prototype = new AnimalFun();
+    //重置constructor属性为Student类,由于设置了Student类的prototype为Person时  
+    //擦除了constructor属性  
+    Dog.prototype.constructor = Dog;
+    //实例化Dog类  
+    var s = new Dog('狗', '低级动物', '肉');
+    //调用父类的方法  
+    s.Print(); //结果:名称：狗,类型：低级动物,食物：肉
+
+</script>
