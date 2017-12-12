@@ -8,6 +8,7 @@ using Tdf.CSharp.AlgorithmDay;
 using Tdf.CSharp.Cognitive.EventBus.Chapter1;
 using Tdf.CSharp.Cognitive.EventBus.Chapter2;
 using Tdf.CSharp.Cognitive.IoC;
+using Tdf.CSharp.Cognitive.ParallelTest;
 using Tdf.CSharp.CSharpDay;
 using Tdf.CSharp.DesignPattern.AdapterPattern;
 using Tdf.CSharp.DesignPattern.FacadePattern;
@@ -27,7 +28,7 @@ namespace CSharpDayConsole
         static void Main(string[] args)
         {
 
-            Delegate01.TestMethod();
+            new ParallelDemo02().ParallelInvokeMethod();
 
             Console.ReadLine();
         }

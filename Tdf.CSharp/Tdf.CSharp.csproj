@@ -76,6 +76,9 @@
     <Compile Include="Cognitive\IoC\ServiceProvider.cs" />
     <Compile Include="Cognitive\IoC\TestIoc.cs" />
     <Compile Include="Cognitive\IoC\Woman.cs" />
+    <Compile Include="Cognitive\ParallelTest\ParallelDemo.cs" />
+    <Compile Include="Cognitive\ParallelTest\ParallelDemo02.cs" />
+    <Compile Include="Cognitive\ParallelTest\PEnumerable.cs" />
     <Compile Include="CSharpDay\Day1.cs" />
     <Compile Include="CSharpDay\Day2.cs" />
     <Compile Include="CSharpDay\Day3.cs" />
@@ -86,6 +89,7 @@
     <Compile Include="CSharpDay\Day8.cs" />
     <Compile Include="CSharpDay\Delegate01.cs" />
     <Compile Include="CSharpDay\JoinStr.cs" />
+    <Compile Include="CSharpDay\LockSample.cs" />
     <Compile Include="CSharpDay\MonitorDirectory.cs" />
     <Compile Include="DesignPattern\AdapterPattern\AdapterPattern01.cs" />
     <Compile Include="DesignPattern\FacadePattern\FacadePattern01.cs" />
